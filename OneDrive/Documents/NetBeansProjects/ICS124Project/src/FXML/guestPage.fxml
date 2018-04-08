@@ -11,10 +11,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="653.0" prefWidth="1153.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GuestPageController">
-    <stylesheets>
-        <URL value="@guestpage.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="653.0" prefWidth="1153.0" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GuestPageController">
    <children>
       <BorderPane layoutX="161.0" layoutY="86.0" prefHeight="509.0" prefWidth="771.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -76,18 +73,13 @@
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
                                        <columns>
-                                          <TableColumn fx:id="studnocolumn" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" resizable="false" text="Student#" />
                                           <TableColumn fx:id="lastnamecolumn" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" resizable="false" text="LastName" />
                                           <TableColumn fx:id="firstnamecolumn" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" resizable="false" text="FirstName" />
                                           <TableColumn fx:id="middlenamecolumn" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" resizable="false" text="MiddleName" />
-                                          <TableColumn fx:id="dateofBirthcolumn" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" resizable="false" text="Birthdate" />
-                                          <TableColumn fx:id="emailAddresscolumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" resizable="false" text="EmailAddress" />
-                                          <TableColumn fx:id="degreecolumn" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" resizable="false" text="Degree" />
-                                          <TableColumn fx:id="collegecolumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" resizable="false" text="College" />
-                                          <TableColumn fx:id="yearcolumn" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" resizable="false" text="Year" />
-                                          <TableColumn fx:id="organizationcolumn" minWidth="200.0" prefWidth="200.0" text="Organization" />
+                                          <TableColumn fx:id="collegecolumn" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" resizable="false" text="College" />
+                                          <TableColumn fx:id="organizationcolumn" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="Organization" />
                                           <TableColumn fx:id="positioncolumn" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" resizable="false" text="Position" />
-                                          <TableColumn fx:id="acadYearcolumn" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" resizable="false" text="A.Y." />
+                                          <TableColumn fx:id="acadYearcolumn" maxWidth="138.0" minWidth="125.0" prefWidth="138.0" resizable="false" text="A.Y." />
                                        </columns>
                                        <BorderPane.margin>
                                           <Insets />
@@ -344,16 +336,11 @@
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
                                        <columns>
-                                          <TableColumn fx:id="studnouniwide" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="Student No." />
                                           <TableColumn fx:id="lastnameuniwide" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="LastName" />
                                           <TableColumn fx:id="firstnameuniwide" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="FirstName" />
                                           <TableColumn fx:id="middlenameuniwide" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="MiddleName" />
-                                          <TableColumn fx:id="dateofBirthuniwide" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="Birthdate" />
-                                          <TableColumn fx:id="emailAddressuniwide" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="EmailAddress" />
-                                          <TableColumn fx:id="degreeuniwide" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="Degree" />
                                           <TableColumn fx:id="collegeuniwide" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="College" />
                                           <TableColumn fx:id="organizationuniwide" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Organization" />
-                                          <TableColumn fx:id="yearsecuniwide" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="Year" />
                                           <TableColumn fx:id="orgPositionuniwide" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="Position" />
                                           <TableColumn fx:id="acadYearuniwide" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="A.Y." />
                                        </columns>

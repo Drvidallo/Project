@@ -101,6 +101,7 @@ public class AddOrganizationWindowController implements Initializable {
         ps.close();
         Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setTitle("Title of alert");
+        a.setHeaderText(null);
         a.initStyle(StageStyle.UNDECORATED);
         a.setContentText("Successfully stored a Local Organization");
         a.showAndWait();

@@ -6,7 +6,6 @@
 package Services;
 
 
-import Model.connection;
 import java.sql.Connection;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -30,8 +29,7 @@ public class LoginPage extends Application{
     
     @Override
     public void start(Stage primaryStage) throws Exception{
-        connection.dbcon();
-        con = connection.ct();
+     
         FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginPage.fxml"));
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("FXML/LoginPage.fxml"));
         primaryStage.getIcons().add(new Image("/Images/TOOD-Logo.png"));

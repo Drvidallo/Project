@@ -33,22 +33,8 @@
     -fx-scale-y: 0.9;
     -fx-scale-x: 0.9;
 }
-.titled-pane:focused 
-{
--fx-color: -fx-focus-color;
--fx-color: black;
--fx-background-color: black;
--fx-border-style: solid;
-}
 
 
-.titled-pane:collapsed 
-{
--fx-border-style: solid;
--fx-text-fill: black;
--fx-color: -fx-focus-color;
--fx-background-color: black;
-}
 
 .titled-pane
 {
@@ -57,5 +43,32 @@
 -fx-color:#0d0d0d;
 -fx-background-color: #ffca13;
 -fx-text-fill: white;
+-fx-animated:true;
  }
+ .titled-pane:hover
+{
 
+-fx-text-fill: black;
+
+ }
+ .titled-pane:focused
+{
+-fx-padding: 0.167em;
+-fx-color: -fx-focus-color;
+-fx-color:#0d0d0d;
+-fx-background-color: #ffca13;
+-fx-text-fill: white;
+-fx-animated:true;
+
+ }
+ .titled-pane:focused > .title 
+{
+-fx-color: -fx-focus-color;
+}
+ .tab{
+     -fx-background-color:#0d0d0d;
+ }
+ 
+ .tab-header-background{
+     -fx-background-color:#0d0d0d;
+ }

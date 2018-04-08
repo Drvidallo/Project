@@ -95,6 +95,7 @@ public class AddUniwideOrganizationController implements Initializable {
             
       Alert a = new Alert(AlertType.INFORMATION);
             a.setTitle("Title of alert");
+            a.setHeaderText(null);
             a.initStyle(StageStyle.UNDECORATED);
             a.setContentText("Successfully stored a Uniwide Organization");
             a.showAndWait();

@@ -43,31 +43,22 @@ public class AddOfficerUniwideController implements Initializable {
     private JFXTextField firstname;
 
     @FXML
-    private JFXTextField acadyear;
+    private JFXComboBox<String> acadyear;
 
-    @FXML
-    private JFXTextField yearsec;
+   
 
     @FXML
     private JFXButton cancelBtn;
 
-    @FXML
-    private JFXTextField degree;
-
+   
     @FXML
     private JFXTextField middlename;
 
     @FXML
     private JFXTextField lastname;
 
-    @FXML
-    private JFXTextField dateofBirth;
+  
 
-    @FXML
-    private JFXTextField emailAddress;
-
-    @FXML
-    private JFXTextField studno;
 
     @FXML
     private JFXTextField orgPosition;
@@ -108,39 +99,33 @@ public class AddOfficerUniwideController implements Initializable {
     
     @FXML
     void saveBtnClicked(ActionEvent event) throws SQLException {
-        String sn = studno.getText();
+       
         String fn = firstname.getText();
         String ln = lastname.getText();
         String mn = middlename.getText();
-        String db = dateofBirth.getText();
-        String em = emailAddress.getText();
-        String d = degree.getText();
-        String ys = yearsec.getText();
+       
         String co = college.getValue();
         String org = organization.getText();
         String op = orgPosition.getText();
-        String ay = acadyear.getText();
+        String ay = acadyear.getValue();
         Connection con = DBConnection.getConnection();
         
         PreparedStatement ps;
-        ps = con.prepareStatement("INSERT INTO OFFICERS(studno, firstname, lastname, middlename,dateofBirth,emailAddress,degree,yearsec,college,organization,orgPosition,acadyear,is_uniwide) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
-        ps.setString(1, sn);
-        ps.setString(2, fn);
-        ps.setString(3, ln);
-        ps.setString(4, mn);
-        ps.setString(5, db);
-        ps.setString(6, em);
-        ps.setString(7, d);
-        ps.setString(8, ys);
-        ps.setString(9, co);
-        ps.setString(10, org);
-        ps.setString(11, op);
-        ps.setString(12, ay);
-        ps.setString(13, "TRUE");
+        ps = con.prepareStatement("INSERT INTO OFFICERS( firstname, lastname, middlename,college,organization,orgPosition,acadyear,is_uniwide) VALUES (?,?,?,?,?,?,?,?)");
+       
+        ps.setString(1, fn);
+        ps.setString(2, ln);
+        ps.setString(3, mn);
+        ps.setString(4, co);
+        ps.setString(5, org);
+        ps.setString(6, op);
+        ps.setString(7, ay);
+        ps.setString(8, "TRUE");
         ps.execute();
         
         Alert a = new Alert(Alert.AlertType.INFORMATION);
             a.setTitle("Title of alert");
+            a.setHeaderText(null);
             a.initStyle(StageStyle.UNDECORATED);
             a.setContentText("Successfully stored in the Officer Table");
             a.showAndWait();
@@ -192,5 +177,19 @@ public class AddOfficerUniwideController implements Initializable {
                 "College of Tourism",
                 "College of Science");
         college.setItems(courses);
+        
+        ObservableList<String> acadyears= FXCollections.observableArrayList(
+                "2011-2012",
+                "2012-2013",
+                "2013-2014",
+                "2014-2015",
+                "2015-2016",
+                "2016-2017",
+                "2017-2018",
+                "2018-2019",
+                "2019-2020",
+                "2020-2021"
+                );
+        acadyear.setItems(acadyears);
     }    
 }

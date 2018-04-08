@@ -32,11 +32,6 @@
                   <Font name="PT Serif Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton layoutX="35.0" layoutY="348.0" prefHeight="30.0" prefWidth="189.0" ripplerFill="#cdadad" style="-fx-background-color: #ffdc65;" text="Forgot your Password?">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </JFXButton>
          </children>
       </Pane>
       <Pane layoutX="41.0" layoutY="137.0" opacity="0.51" prefHeight="137.0" prefWidth="436.0" style="-fx-background-color: #0d0d0d;" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="137.0">

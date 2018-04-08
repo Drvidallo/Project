@@ -28,19 +28,14 @@ public class OfficerDAO {
         ResultSet rs = stmt.executeQuery(sql);
         
         while(rs.next()){
-            String stdn = rs.getString("studno");
             String fn = rs.getString("firstname");
             String ln = rs.getString("lastname");
             String mn = rs.getString("middlename");
-            String db = rs.getString("dateofBirth");
-            String em = rs.getString("emailAddress");
-            String deg = rs.getString("degree");
             String col = rs.getString("college");
-            String ys = rs.getString("yearsec");
             String org = rs.getString("organization");
             String orgP = rs.getString("orgPosition");
             String ay = rs.getString("acadYear");
-            Officer officer = new Officer(stdn, fn, ln, mn, db, em, deg, col, ys, org, orgP, ay);
+            Officer officer = new Officer( fn, ln, mn, col, org, orgP, ay);
             of.add(officer);
         }
         stmt = con.createStatement();
@@ -61,20 +56,16 @@ public class OfficerDAO {
         ResultSet rs = stmt.executeQuery(sql);
         
         while(rs.next()){
-            String stdn = rs.getString("studno");
             String fn = rs.getString("firstname");
             String ln = rs.getString("lastname");
             String mn = rs.getString("middlename");
-            String db = rs.getString("dateofBirth");
-            String em = rs.getString("emailAddress");
-            String deg = rs.getString("degree");
             String col = rs.getString("college");
-            String ys = rs.getString("yearsec");
             String org = rs.getString("organization");
             String orgP = rs.getString("orgPosition");
             String ay = rs.getString("acadYear");
-            Officer officer = new Officer(stdn, fn, ln, mn, db, em, deg, col, ys, org, orgP, ay);
+            Officer officer = new Officer( fn, ln, mn, col, org, orgP, ay);
             of.add(officer);
+         
         }
         stmt = con.createStatement();
         stmt.execute(sql);
@@ -95,19 +86,14 @@ public class OfficerDAO {
         ResultSet rs = stmt.executeQuery(sql);
   
         while(rs.next()){
-            String stdn = rs.getString("studno");
-            String fn = rs.getString("firstname");
+           String fn = rs.getString("firstname");
             String ln = rs.getString("lastname");
             String mn = rs.getString("middlename");
-            String db = rs.getString("dateofBirth");
-            String em = rs.getString("emailAddress");
-            String deg = rs.getString("degree");
             String col = rs.getString("college");
-            String ys = rs.getString("yearsec");
             String org = rs.getString("organization");
             String orgP = rs.getString("orgPosition");
             String ay = rs.getString("acadYear");
-            Officer officer = new Officer(stdn, fn, ln, mn, db, em, deg, col, ys, org, orgP, ay);
+            Officer officer = new Officer( fn, ln, mn, col, org, orgP, ay);
             of.add(officer);
         }
         rs.close();
@@ -128,19 +114,14 @@ public class OfficerDAO {
         ResultSet rs = stmt.executeQuery(sql);
   
         while(rs.next()){
-            String stdn = rs.getString("studno");
-            String fn = rs.getString("firstname");
+           String fn = rs.getString("firstname");
             String ln = rs.getString("lastname");
             String mn = rs.getString("middlename");
-            String db = rs.getString("dateofBirth");
-            String em = rs.getString("emailAddress");
-            String deg = rs.getString("degree");
             String col = rs.getString("college");
-            String ys = rs.getString("yearsec");
             String org = rs.getString("organization");
             String orgP = rs.getString("orgPosition");
             String ay = rs.getString("acadYear");
-            Officer officer = new Officer(stdn, fn, ln, mn, db, em, deg, col, ys, org, orgP, ay);
+            Officer officer = new Officer( fn, ln, mn, col, org, orgP, ay);
             of.add(officer);
         }
         rs.close();

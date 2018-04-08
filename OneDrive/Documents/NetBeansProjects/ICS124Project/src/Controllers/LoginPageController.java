@@ -39,8 +39,7 @@ public class LoginPageController implements Initializable {
     @FXML
     private JFXButton login;
 
-    @FXML
-    private JFXButton forgotPass;
+
 
     @FXML
     private JFXTextField username;
@@ -74,7 +73,7 @@ public class LoginPageController implements Initializable {
             Scene guestPageScene = new Scene(root);
             Alert a = new Alert(AlertType.INFORMATION);
             a.setTitle("Title of alert");
-            a.setHeaderText("Look, an Information Dialog");
+            a.setHeaderText(null);
             a.initStyle(StageStyle.UNDECORATED);
             a.setContentText("Guest successfully logged in");
             a.showAndWait();
@@ -89,6 +88,7 @@ public class LoginPageController implements Initializable {
         {
             Alert a = new Alert(AlertType.ERROR);
             a.setTitle("Title of alert");
+            a.setHeaderText(null);
             a.initStyle(StageStyle.UNDECORATED);
             a.setContentText("Wrong Credentials");
             a.showAndWait();
@@ -107,10 +107,7 @@ public class LoginPageController implements Initializable {
 
     }
 
-    @FXML
-    void forgotPass(ActionEvent event) {
-
-    }
+  
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

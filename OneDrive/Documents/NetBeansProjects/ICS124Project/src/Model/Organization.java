@@ -14,7 +14,7 @@ public class Organization {
     private String name;
     private String year_established;
     private String is_uwide;
-    private String college_code;
+  
     
     public Organization(int org_id, String name, String year_established){
         this.org_id = org_id;
@@ -61,12 +61,7 @@ public class Organization {
     public void setIs_uwide(String is_uwide) {
         this.is_uwide = is_uwide;
     }
-    public String getCollege_code() {
-        return college_code;
-    }
-    public void setCollege_code(String college_code) {
-        this.college_code = college_code;
-    }
+ 
     
     
 }

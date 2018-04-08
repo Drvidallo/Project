@@ -47,14 +47,6 @@ public class GuestPageController implements Initializable {
     @FXML
     private TableColumn<Officer, String> firstnamecolumn;
     @FXML
-    private TableColumn<Officer, String> dateofBirthcolumn;
-    @FXML
-    private TableColumn<Officer, String> yearcolumn;
-    @FXML
-    private TableColumn<Officer, String> studnocolumn;
-    @FXML
-    private TableColumn<Officer, String> degreecolumn;
-    @FXML
     private TableColumn<Officer, String> middlenamecolumn;
     @FXML
     private TableColumn<Officer, String> acadYearcolumn;
@@ -62,8 +54,7 @@ public class GuestPageController implements Initializable {
     private TableColumn<Officer, String> lastnamecolumn;
     @FXML
     private TableColumn<Officer, String> positioncolumn;
-    @FXML
-    private TableColumn<Officer, String> emailAddresscolumn;
+  
     @FXML
     private TableColumn<Officer, String> organizationcolumn;
     
@@ -75,14 +66,7 @@ public class GuestPageController implements Initializable {
     private TableColumn<Officer, String> collegeuniwide;
     @FXML
     private TableColumn<Officer, String> firstnameuniwide;
-    @FXML
-    private TableColumn<Officer, String> dateofBirthuniwide;
-    @FXML
-    private TableColumn<Officer, String> yearsecuniwide;
-    @FXML
-    private TableColumn<Officer, String> studnouniwide;
-    @FXML
-    private TableColumn<Officer, String> degreeuniwide;
+ 
     @FXML
     private TableColumn<Officer, String> middlenameuniwide;
     @FXML
@@ -91,8 +75,6 @@ public class GuestPageController implements Initializable {
     private TableColumn<Officer, String> lastnameuniwide;
     @FXML
     private TableColumn<Officer, String> orgPositionuniwide;
-    @FXML
-    private TableColumn<Officer, String> emailAddressuniwide;
     @FXML
     private TableColumn<Officer, String> organizationuniwide;
      
@@ -207,10 +189,10 @@ public class GuestPageController implements Initializable {
                 adminStage.show();
     }
      public void connectOfficer(){
-        univOrg.setOnMouseClicked(e ->{
+          univOrg.setOnMouseClicked(e ->{
             tableviewUniwideList.clear();
             String univString = (String)univOrg.getSelectionModel().getSelectedItem();
-            List<Officer> lists = OfficerDAO.getOfficerList(univString);
+            List<Officer> lists = OfficerDAO.getOfficerUniwideList(univString);
             ObservableList<Officer> olist = FXCollections.observableArrayList(lists);
             tableview.setItems(olist);            
     });
@@ -413,105 +395,115 @@ public class GuestPageController implements Initializable {
        colScienceList= FXCollections.observableArrayList(org);
        colScience.setItems(colScienceList);
            }
+    
     public void setFacCivilLaw(){
         List<String> org= OrganizationDAO.getLocalfacCivilLawListName();
        facCivilLawList= FXCollections.observableArrayList(org);
        facCivilLaw.setItems(facCivilLawList);
            }
+    
     public void setFacEccle(){
         List<String> org= OrganizationDAO.getLocalfacEccleListName();
        facEccleList= FXCollections.observableArrayList(org);
        facEccle.setItems(facEccleList);
            }
+    
     public void setFacMed(){
         List<String> org= OrganizationDAO.getLocalfacMedListName();
        facMedList= FXCollections.observableArrayList(org);
        facMed.setItems(facMedList);
            }
+    
     public void setFacPharma(){
         List<String> org= OrganizationDAO.getLocalfacPharmaListName();
        facPharmaList= FXCollections.observableArrayList(org);
        facPharma.setItems(facPharmaList);
            }
+    
     public void setFacArts(){
         List<String> org= OrganizationDAO.getLocalfacArtsListName();
        facArtsList= FXCollections.observableArrayList(org);
        facArts.setItems(facArtsList);
            }
+    
     public void setFacEng(){
         List<String> org= OrganizationDAO.getLocalfacEngListName();
        facEngList= FXCollections.observableArrayList(org);
        facEng.setItems(facEngList);
            }
+    
     public void setInstPhysical(){
         List<String> org= OrganizationDAO.getLocalInstPhysicalListName();
        InstPhysicalList= FXCollections.observableArrayList(org);
        InstPhysical.setItems(InstPhysicalList);
            }
+    
     public void setInstInfo(){
         List<String> org= OrganizationDAO.getLocalInstInfoListName();
        InstInfoList= FXCollections.observableArrayList(org);
        InstInfo.setItems(InstInfoList);
            }
+    
     public void setUstEducHigh(){
         List<String> org= OrganizationDAO.getLocalUstEducListName();
        usteducList= FXCollections.observableArrayList(org);
        usteduc.setItems(usteducList);
            }
+    
     public void setUstJuniorHigh(){
         List<String> org= OrganizationDAO.getLocalUstJuniorListName();
        ustjuniorList= FXCollections.observableArrayList(org);
        ustjunior.setItems(ustjuniorList);
            }
+    
     public void setUstSeniorHigh(){
         List<String> org= OrganizationDAO.getLocalUstSeniorListName();
        ustseniorList= FXCollections.observableArrayList(org);
        ustsenior.setItems(ustseniorList);
            }
+    
     public void setUstGradSchool(){
         List<String> org= OrganizationDAO.getLocalGradSchoolListName();
        gradschoolList= FXCollections.observableArrayList(org);
        gradschool.setItems(gradschoolList);
            }
-     public void setUnivOrgList(){
+    
+      public void setUnivOrgList(){
        List<String> org= OrganizationDAO.getUniWideListStringName();
        univOrgList= FXCollections.observableArrayList(org);
        univOrg.setItems(univOrgList);
        }
-      public void getOfficer(){
+
+    public void getOfficer(){
         List<Officer> classOfficer = OfficerDAO.getOfficerList();
        tableviewLocalList = FXCollections.observableArrayList(classOfficer);
        tableviewLocal.setItems(tableviewLocalList);
     }
     public void getOfficerUniwide(){
-        List<Officer> classOfficer = OfficerDAO.getOfficerList();
+        List<Officer> classOfficer = OfficerDAO.getOfficerUniwideList();
        tableviewUniwideList = FXCollections.observableArrayList(classOfficer);
        tableview.setItems(tableviewUniwideList);
     }
       private void setTableLocal(){
-        studnocolumn.setCellValueFactory(new PropertyValueFactory<Officer, String>("studno"));
+     
         firstnamecolumn.setCellValueFactory(new PropertyValueFactory<Officer, String>("firstname"));
         lastnamecolumn.setCellValueFactory(new PropertyValueFactory<Officer, String>("lastname"));
         middlenamecolumn.setCellValueFactory(new PropertyValueFactory<Officer, String>("middlename"));
-        dateofBirthcolumn.setCellValueFactory(new PropertyValueFactory<Officer, String>("dateofBirth"));
-        emailAddresscolumn.setCellValueFactory(new PropertyValueFactory<Officer, String>("emailAddress"));
-        degreecolumn.setCellValueFactory(new PropertyValueFactory<Officer, String>("degree"));
+        
         collegecolumn.setCellValueFactory(new PropertyValueFactory<Officer, String>("college"));
-        yearcolumn.setCellValueFactory(new PropertyValueFactory<Officer, String>("yearsec"));
+      
         organizationcolumn.setCellValueFactory(new PropertyValueFactory<Officer, String>("organization"));
         positioncolumn.setCellValueFactory(new PropertyValueFactory<Officer, String>("orgPosition"));
         acadYearcolumn.setCellValueFactory(new PropertyValueFactory<Officer, String>("acadYear"));    
     }
       private void setTableUniwide(){
-        studnouniwide.setCellValueFactory(new PropertyValueFactory<Officer, String>("studno"));
+       
         firstnameuniwide.setCellValueFactory(new PropertyValueFactory<Officer, String>("firstname"));
         lastnameuniwide.setCellValueFactory(new PropertyValueFactory<Officer, String>("lastname"));
         middlenameuniwide.setCellValueFactory(new PropertyValueFactory<Officer, String>("middlename"));
-        dateofBirthuniwide.setCellValueFactory(new PropertyValueFactory<Officer, String>("dateofBirth"));
-        emailAddressuniwide.setCellValueFactory(new PropertyValueFactory<Officer, String>("emailAddress"));
-        degreeuniwide.setCellValueFactory(new PropertyValueFactory<Officer, String>("degree"));
+        
         collegeuniwide.setCellValueFactory(new PropertyValueFactory<Officer, String>("college"));
-        yearsecuniwide.setCellValueFactory(new PropertyValueFactory<Officer, String>("yearsec"));
+       
         organizationuniwide.setCellValueFactory(new PropertyValueFactory<Officer, String>("organization"));
         orgPositionuniwide.setCellValueFactory(new PropertyValueFactory<Officer, String>("orgPosition"));
         acadYearuniwide.setCellValueFactory(new PropertyValueFactory<Officer, String>("acadYear"));    
